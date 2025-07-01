@@ -2,7 +2,7 @@
 
 const currentDayNumber = new Date().getDay();
 
-let day = "Unknown";
+let day = "Unknown"; 
 
 if (currentDayNumber < 0 || currentDayNumber > 6) {
     day = "Invalid Day Number";

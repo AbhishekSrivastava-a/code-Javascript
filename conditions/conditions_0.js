@@ -5,7 +5,7 @@ let password = "abcdefghiABCDEFGHI";
 let userIsLoggedIn = true;       
 let emailIsVerified = true;       
 let passwordIsCorrect = true;     
-let usernameIsVerified = true;   
+let usernameIsVerified = true;  
 
 // userIsLoggedIn IS true AND emailIsVerified IS true AND passwordIsCorrect IS true AND usernameIsVerified IS true
 

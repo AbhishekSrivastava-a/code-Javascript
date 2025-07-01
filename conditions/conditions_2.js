@@ -9,6 +9,7 @@ var authenticated = false;
 authenticated ? console.log("SignOut") : console.log("LOGIN");
 
 
+
 //output
 
 
