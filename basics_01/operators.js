@@ -18,7 +18,7 @@ console.log(discountPricePercentage + "% off");
 const number1 = 10; 
 const operator = '+'; 
 const number2 = 5;
-let result;
+let result; 
 
 if (operator === '+') {
     result = number1 + number2;
