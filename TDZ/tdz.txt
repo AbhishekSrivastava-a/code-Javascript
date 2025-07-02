@@ -1,0 +1,41 @@
+-Hoisting and Memory Allocation:
+
+var declarations: These are hoisted, meaning memory is allocated for them during the compilation phase. 
+They are initialized with undefined if no value is explicitly assigned. 
+var variables are attached to the global window object and can be accessed 
+before their declaration (resulting in undefined). They also allow re-declaration within the same scope.
+
+let and const declarations: While also hoisted, they are handled differently. 
+Memory is allocated in a separate space, not directly on the global window object. 
+They are not initialized with undefined. Attempting to access them before initialization 
+results in a ReferenceError.
+
+-Temporal Dead Zone (TDZ):
+
+This is the period between when a let or const variable is hoisted and 
+when it is actually initialized with a value.
+
+During the TDZ, accessing the variable will cause a ReferenceError. 
+The variable becomes accessible only after it has been initialized.
+
+-Key Differences and Best Practices:
+
+Re-declaration: var allows re-declaration in the same scope; let and const do not 
+(this causes a SyntaxError).
+
+Re-assignment: var and let can be re-assigned; const cannot (this causes a TypeError).
+
+Initialization: var and let can be declared without immediate initialization; 
+const must be initialized at the time of declaration (otherwise, it's a SyntaxError).
+
+-Error Types:
+
+ReferenceError: Occurs when accessing an undefined variable or one in the TDZ.
+
+SyntaxError: Occurs due to grammatical errors like re-declaring let/const or not initializing const.
+
+TypeError: Occurs when an operation is performed on an incompatible type, such as re-assigning a const.
+
+
+-Prioritize const for unchanging values and let for mutable values. Avoid var. 
+Always declare and initialize let and const variables at the top of their scope to prevent TDZ issues.
