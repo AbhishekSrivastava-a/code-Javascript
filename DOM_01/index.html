@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Methods Demonstration</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4">
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">DOM Methods Demonstration</h1>
+
+        <!-- Section: Selection Methods -->
+        <div class="mb-8">
+            <h2 class="section-title">1. Selection Methods</h2>
+
+            <!-- getElementById -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">getElementById()</span></p>
+                <p id="myElement">This is an element with ID "myElement".</p>
+                <button id="getByIdBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md mt-2">Get Element by ID</button>
+                <div id="idResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>document.getElementById('myElement');</pre>
+                </div>
+            </div>
+
+            <!-- getElementsByClassName -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">getElementsByClassName()</span></p>
+                <p class="myClass">This is the first element with class "myClass".</p>
+                <p class="myClass">This is the second element with class "myClass".</p>
+                <button id="getByClassBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md mt-2">Get Elements by Class</button>
+                <div id="classResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>document.getElementsByClassName('myClass');</pre>
+                </div>
+            </div>
+
+            <!-- getElementsByTagName -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">getElementsByTagName()</span></p>
+                <ul>
+                    <li>List Item 1</li>
+                    <li>List Item 2</li>
+                </ul>
+                <button id="getByTagBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md mt-2">Get Elements by Tag</button>
+                <div id="tagResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>document.getElementsByTagName('li');</pre>
+                </div>
+            </div>
+
+            <!-- querySelector -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">querySelector()</span></p>
+                <div class="query-example">
+                    <p class="item">First query item.</p>
+                    <p class="item special">Second query item (special).</p>
+                </div>
+                <button id="querySelectorBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md mt-2">Query Selector</button>
+                <div id="querySelectorResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>document.querySelector('.query-example .item.special');</pre>
+                </div>
+            </div>
+
+            <!-- querySelectorAll -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">querySelectorAll()</span></p>
+                <div class="query-all-example">
+                    <span class="data-point">Data 1</span>
+                    <span class="data-point">Data 2</span>
+                    <span class="data-point">Data 3</span>
+                </div>
+                <button id="querySelectorAllBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md mt-2">Query Selector All</button>
+                <div id="querySelectorAllResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>document.querySelectorAll('.data-point');</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Manipulation Methods -->
+        <div class="mb-8">
+            <h2 class="section-title">2. Manipulation Methods</h2>
+
+            <!-- innerHTML -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">innerHTML</span> (Get/Set)</p>
+                <div id="innerHtmlDiv" class="border p-2 rounded-md bg-gray-100">
+                    <p>Original <strong>HTML</strong> content.</p>
+                </div>
+                <button id="getInnerHtmlBtn" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-md mt-2 mr-2">Get innerHTML</button>
+                <button id="setInnerHtmlBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md mt-2">Set innerHTML</button>
+                <div id="innerHtmlResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>// Get: element.innerHTML
+// Set: element.innerHTML = '&lt;p&gt;New &lt;em&gt;HTML&lt;/em&gt; content!&lt;/p&gt;';</pre>
+                </div>
+            </div>
+
+            <!-- textContent -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">textContent</span> (Get/Set)</p>
+                <div id="textContentDiv" class="border p-2 rounded-md bg-gray-100">
+                    <p>Original <strong>text</strong> content.</p>
+                </div>
+                <button id="getTextContentBtn" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-md mt-2 mr-2">Get textContent</button>
+                <button id="setTextContentBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md mt-2">Set textContent</button>
+                <div id="textContentResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>// Get: element.textContent
+// Set: element.textContent = 'New plain text content!';</pre>
+                </div>
+            </div>
+
+            <!-- setAttribute / getAttribute -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">setAttribute() / getAttribute()</span></p>
+                <img id="myImage" src="https://placehold.co/100x100/A0A0A0/FFFFFF?text=Original" alt="Original Image" class="rounded-md">
+                <button id="setAttributeBtn" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md mt-2 mr-2">Change Image Source</button>
+                <button id="getAttributeBtn" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md mt-2">Get Image Alt</button>
+                <div id="attributeResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>// Set: element.setAttribute('src', 'new_image.jpg');
+// Get: element.getAttribute('alt');</pre>
+                </div>
+            </div>
+
+            <!-- classList (add, remove, toggle) -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">classList.add/remove/toggle()</span></p>
+                <div id="classToggleDiv" class="border p-4 rounded-md text-center transition-all duration-300">
+                    Toggle my styles!
+                </div>
+                <button id="addClassBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-md mt-2 mr-2">Add Class</button>
+                <button id="removeClassBtn" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-md mt-2 mr-2">Remove Class</button>
+                <button id="toggleClassBtn" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-md mt-2">Toggle Class</button>
+                <div class="code-snippet">
+                    <pre>// Add: element.classList.add('red-text');
+// Remove: element.classList.remove('red-text');
+// Toggle: element.classList.toggle('blue-bg');</pre>
+                </div>
+            </div>
+
+            <!-- createElement & appendChild -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">createElement() & appendChild()</span></p>
+                <div id="parentElement" class="border p-2 rounded-md bg-gray-100 min-h-[50px]">
+                    <p>Existing children:</p>
+                </div>
+                <button id="createAppendBtn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-md mt-2">Create & Append Paragraph</button>
+                <div class="code-snippet">
+                    <pre>// const newP = document.createElement('p');
+// parentElement.appendChild(newP);</pre>
+                </div>
+            </div>
+
+            <!-- removeChild -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">removeChild()</span></p>
+                <div id="removeParent" class="border p-2 rounded-md bg-gray-100 min-h-[50px]">
+                    <p id="childToRemove">This child will be removed.</p>
+                    <p>This child will remain.</p>
+                </div>
+                <button id="removeChildBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md mt-2">Remove Child</button>
+                <div class="code-snippet">
+                    <pre>// parentElement.removeChild(childElement);</pre>
+                </div>
+            </div>
+
+            <!-- replaceChild -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">replaceChild()</span></p>
+                <div id="replaceParent" class="border p-2 rounded-md bg-gray-100 min-h-[50px]">
+                    <p id="childToReplace">This child will be replaced.</p>
+                    <p>Another child.</p>
+                </div>
+                <button id="replaceChildBtn" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-md mt-2">Replace Child</button>
+                <div class="code-snippet">
+                    <pre>// parentElement.replaceChild(newChild, oldChild);</pre>
+                </div>
+            </div>
+
+            <!-- cloneNode -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">cloneNode()</span></p>
+                <div id="originalNode" class="border p-2 rounded-md bg-gray-100 inline-block mr-4">
+                    Original Node
+                    <button class="bg-gray-300 px-2 py-1 rounded-md text-sm">Btn</button>
+                </div>
+                <div id="clonedNodesContainer" class="border p-2 rounded-md bg-gray-100 inline-block min-h-[50px] align-top">
+                    Cloned Nodes:
+                </div>
+                <button id="cloneNodeBtn" class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded-md mt-2">Clone Node (Deep)</button>
+                <div class="code-snippet">
+                    <pre>// element.cloneNode(true); // true for deep clone (includes children)</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Event Handling -->
+        <div class="mb-8">
+            <h2 class="section-title">3. Event Handling</h2>
+
+            <!-- addEventListener -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">addEventListener()</span></p>
+                <button id="eventBtn" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-md mt-2">Click Me!</button>
+                <div id="eventResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>// element.addEventListener('click', function() { ... });</pre>
+                </div>
+            </div>
+
+            <!-- removeEventListener -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">removeEventListener()</span></p>
+                <button id="toggleListenerBtn" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md mt-2">Toggle Click Listener</button>
+                <div id="listenerStatus" class="result-box bg-yellow-100 border-yellow-300 text-yellow-800">Listener is ON</div>
+                <div class="code-snippet">
+                    <pre>// element.removeEventListener('click', myFunction);</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Styling Methods -->
+        <div class="mb-8">
+            <h2 class="section-title">4. Styling Methods</h2>
+
+            <!-- style.propertyName -->
+            <div class="example-box">
+                <p class="font-semibold">Method: <span class="highlight">element.style.propertyName</span></p>
+                <div id="styleDiv" class="border p-4 rounded-md text-center transition-all duration-300" style="background-color: #cbd5e1; color: #1e293b;">
+                    Change my style!
+                </div>
+                <button id="changeStyleBtn" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-md mt-2">Change Background & Text</button>
+                <div class="code-snippet">
+                    <pre>// element.style.backgroundColor = 'blue';
+// element.style.color = 'white';</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Section: Form Events -->
+        <div class="mb-8">
+            <h2 class="section-title">5. Form Events</h2>
+
+            <!-- submit event -->
+            <div class="example-box">
+                <p class="font-semibold">Event: <span class="highlight">submit</span></p>
+                <form id="myForm" class="flex flex-col space-y-2">
+                    <label for="nameInput">Name:</label>
+                    <input type="text" id="nameInput" class="border p-2 rounded-md" placeholder="Enter your name">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Submit Form</button>
+                </form>
+                <div id="formSubmitResult" class="result-box hidden"></div>
+                <div class="code-snippet">
+                    <pre>// formElement.addEventListener('submit', function(event) { event.preventDefault(); ... });</pre>
+                </div>
+            </div>
+
+            <!-- input event -->
+            <div class="example-box">
+                <p class="font-semibold">Event: <span class="highlight">input</span></p>
+                <label for="liveInput">Type something:</label>
+                <input type="text" id="liveInput" class="border p-2 rounded-md w-full" placeholder="Type here...">
+                <div id="liveInputResult" class="result-box hidden mt-2"></div>
+                <div class="code-snippet">
+                    <pre>// inputElement.addEventListener('input', function(event) { ... });</pre>
+                </div>
+            </div>
+
+            <!-- change event -->
+            <div class="example-box">
+                <p class="font-semibold">Event: <span class="highlight">change</span></p>
+                <label for="selectOption">Choose an option:</label>
+                <select id="selectOption" class="border p-2 rounded-md w-full">
+                    <option value="">--Please choose an option--</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+                <div id="selectChangeResult" class="result-box hidden mt-2"></div>
+                <div class="code-snippet">
+                    <pre>// selectElement.addEventListener('change', function(event) { ... });</pre>
+                </div>
+            </div>
+
+            <!-- focus and blur events -->
+            <div class="example-box">
+                <p class="font-semibold">Events: <span class="highlight">focus</span> and <span class="highlight">blur</span></p>
+                <label for="focusBlurInput">Focus/Blur this input:</label>
+                <input type="text" id="focusBlurInput" class="border p-2 rounded-md w-full" placeholder="Click here and then click away">
+                <div id="focusBlurResult" class="result-box hidden mt-2"></div>
+                <div class="code-snippet">
+                    <pre>// inputElement.addEventListener('focus', function() { ... });
+// inputElement.addEventListener('blur', function() { ... });</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Section: Keyboard Events -->
+        <div class="mb-8">
+            <h2 class="section-title">6. Keyboard Events</h2>
+
+            <!-- keydown, keyup, keypress -->
+            <div class="example-box">
+                <p class="font-semibold">Events: <span class="highlight">keydown</span>, <span class="highlight">keyup</span></p>
+                <label for="keyEventInput">Press keys in this input:</label>
+                <input type="text" id="keyEventInput" class="border p-2 rounded-md w-full" placeholder="Press any key...">
+                <div id="keyEventResult" class="result-box hidden mt-2"></div>
+                <div class="code-snippet">
+                    <pre>// inputElement.addEventListener('keydown', function(event) { ... });
+// inputElement.addEventListener('keyup', function(event) { ... });</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Section: Mouse Events -->
+        <div class="mb-8">
+            <h2 class="section-title">7. Mouse Events</h2>
+
+            <!-- mouseover and mouseout -->
+            <div class="example-box">
+                <p class="font-semibold">Events: <span class="highlight">mouseover</span> and <span class="highlight">mouseout</span></p>
+                <div id="mouseOverOutDiv" class="border p-8 rounded-md bg-gray-200 text-center cursor-pointer transition-all duration-200">
+                    Hover over me!
+                </div>
+                <div id="mouseOverOutResult" class="result-box hidden mt-2"></div>
+                <div class="code-snippet">
+                    <pre>// element.addEventListener('mouseover', function() { ... });
+// element.addEventListener('mouseout', function() { ... });</pre>
+                </div>
+            </div>
+
+            <!-- mousemove -->
+            <div class="example-box">
+                <p class="font-semibold">Event: <span class="highlight">mousemove</span></p>
+                <div id="mouseMoveDiv" class="border p-8 rounded-md bg-gray-200 text-center cursor-crosshair h-32 flex items-center justify-center">
+                    Move your mouse here!
+                </div>
+                <div id="mouseMoveResult" class="result-box hidden mt-2"></div>
+                <div class="code-snippet">
+                    <pre>// element.addEventListener('mousemove', function(event) { ... });</pre>
+                </div>
+            </div>
+
+            <!-- mousedown and mouseup -->
+            <div class="example-box">
+                <p class="font-semibold">Events: <span class="highlight">mousedown</span> and <span class="highlight">mouseup</span></p>
+                <button id="mouseDownUpBtn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md mt-2">Press and Release Me</button>
+                <div id="mouseDownUpResult" class="result-box hidden mt-2"></div>
+                <div class="code-snippet">
+                    <pre>// element.addEventListener('mousedown', function() { ... });
+// element.addEventListener('mouseup', function() { ... });</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/DOM_01/script.js"></script>
+</body>
+</html>
